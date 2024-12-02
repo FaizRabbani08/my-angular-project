@@ -1,0 +1,70 @@
+<div class="write-review-container">
+  <h2>Write a Review</h2>
+
+  <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+    <!-- Business Name -->
+    <div class="form-group">
+      <label for="businessName">Business Name</label>
+      <input
+        type="text"
+        id="businessName"
+        formControlName="businessName"
+        placeholder="Enter the business name"
+      />
+      <div
+        *ngIf="
+          reviewForm.controls['businessName'].invalid &&
+          reviewForm.controls['businessName'].touched
+        "
+      >
+        <small class="error-text">Business name is required.</small>
+      </div>
+    </div>
+
+    <!-- Star Rating -->
+    <div class="form-group">
+      <label>Rating</label>
+      <div class="star-rating">
+        <i
+          *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+          class="fa"
+          [ngClass]="{ 'fa-star': i < rating, 'fa-star-o': i >= rating }"
+          (click)="setRating(i + 1)"
+        ></i>
+      </div>
+      <div
+        *ngIf="
+          reviewForm.controls['rating'].invalid &&
+          reviewForm.controls['rating'].touched
+        "
+      >
+        <small class="error-text">Please select a rating.</small>
+      </div>
+    </div>
+
+    <!-- Review Text -->
+    <div class="form-group">
+      <label for="reviewText">Your Review</label>
+      <textarea
+        id="reviewText"
+        formControlName="reviewText"
+        placeholder="Write your review here..."
+      ></textarea>
+      <div
+        *ngIf="
+          reviewForm.controls['reviewText'].invalid &&
+          reviewForm.controls['reviewText'].touched
+        "
+      >
+        <small class="error-text"
+          >Review must be at least 10 characters long.</small
+        >
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="reviewForm.invalid" class="submit-button">
+      Submit Review
+    </button>
+  </form>
+</div>

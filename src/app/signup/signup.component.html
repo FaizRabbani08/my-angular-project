@@ -1,0 +1,103 @@
+<div class="signup-container">
+  <h2>Signup</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+    <!-- Name -->
+    <div>
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" />
+      <div
+        *ngIf="
+          signupForm.get('name')?.invalid && signupForm.get('name')?.touched
+        "
+      >
+        Name is required
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" />
+      <div
+        *ngIf="
+          signupForm.get('email')?.invalid && signupForm.get('email')?.touched
+        "
+      >
+        Valid email is required
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div>
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" />
+      <div
+        *ngIf="
+          signupForm.get('password')?.invalid &&
+          signupForm.get('password')?.touched
+        "
+      >
+        Password is required and should be at least 6 characters
+      </div>
+    </div>
+
+    <!-- Date of Birth -->
+    <div>
+      <label for="dob">Date of Birth</label>
+      <input id="dob" type="date" formControlName="dob" />
+      <div
+        *ngIf="signupForm.get('dob')?.invalid && signupForm.get('dob')?.touched"
+      >
+        Date of birth is required
+      </div>
+    </div>
+
+    <!-- Gender -->
+    <div>
+      <label for="gender">Gender</label>
+      <select id="gender" formControlName="gender">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <div
+        *ngIf="
+          signupForm.get('gender')?.invalid && signupForm.get('gender')?.touched
+        "
+      >
+        Gender is required
+      </div>
+    </div>
+
+    <!-- Mobile Number -->
+    <div>
+      <label for="mobile">Mobile Number</label>
+      <input id="mobile" type="tel" formControlName="mobile" />
+      <div
+        *ngIf="
+          signupForm.get('mobile')?.invalid && signupForm.get('mobile')?.touched
+        "
+      >
+        Valid mobile number is required
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div>
+      <label for="address">Address</label>
+      <textarea id="address" formControlName="address"></textarea>
+      <div
+        *ngIf="
+          signupForm.get('address')?.invalid &&
+          signupForm.get('address')?.touched
+        "
+      >
+        Address is required
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="signupForm.invalid">Signup</button>
+  </form>
+</div>

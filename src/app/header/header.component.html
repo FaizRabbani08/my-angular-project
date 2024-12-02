@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a routerLink="/">
+        <img src="./assets/logo1.png" alt="Logo" class="logo-image" />
+      </a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search for businesses" />
+      <button>
+        <i class="fa fa-search"></i>
+        <!-- FontAwesome Icon -->
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+      <ul>
+        <li><a routerLink="/write-review">Write a Review</a></li>
+        <li><button (click)="onClickLogin()">Log In</button></li>
+        <li><button (click)="onClickSignup()">Sign Up</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>

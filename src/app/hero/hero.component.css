@@ -1,0 +1,38 @@
+.hero {
+  background-color: #444;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.hero .search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero .search-bar input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+.hero .search-bar button {
+  padding: 0.8rem 1.5rem;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

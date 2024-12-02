@@ -1,0 +1,28 @@
+.categories {
+  background-color: #555;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.categories h2 {
+  margin-bottom: 1.5rem;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.category {
+  background-color: #666;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category:hover {
+  background-color: #777;
+}
